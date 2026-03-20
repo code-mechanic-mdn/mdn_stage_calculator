@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora de craft para MDN MEC — calcule os materiais e lucro de cada componente.">
+    <title>MDN MEC — Calculadora de Craft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app">
+        <!-- LEFT PANEL — Component List -->
+        <div class="items-panel">
+            <div class="items-header">
+                <h2>Componentes</h2>
+                <span class="badge" id="countBadge">0</span>
+            </div>
+            <div class="items-list" id="itemsList"></div>
+        </div>
+
+        <!-- RIGHT PANEL — Summary -->
+        <div class="detail-panel" id="detailPanel">
+            <div class="detail-header">
+                <div>
+                    <div class="detail-title">Craft Calculator</div>
+                    <div class="detail-subtitle">Selecione componentes para calcular</div>
+                </div>
+                <div class="header-controls">
+                    <div class="discount-input-group" id="discountGroup" style="display:none;">
+                        <label for="discountInput">Desconto</label>
+                        <div class="discount-field">
+                            <input type="number" id="discountInput" min="0" max="100" value="0" step="1">
+                            <span class="discount-suffix">%</span>
+                        </div>
+                    </div>
+                    <button class="clear-btn" id="clearBtn" style="display:none;">Limpar</button>
+                </div>
+            </div>
+
+            <div class="empty-state" id="emptyState">
+                <div class="empty-icon">🔧</div>
+                <p>Selecione um ou mais componentes na lista ao lado para ver os materiais necessários e o custo total.</p>
+            </div>
+
+            <div id="summaryContent" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- Data first, then app logic -->
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
