@@ -43,10 +43,83 @@ body {
     border: 1px solid var(--border-panel);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     overflow: hidden;
-    display: grid;
-    grid-template-columns: 300px 1fr;
+    display: flex;
+    flex-direction: column;
     min-height: 600px;
     max-height: 90vh;
+}
+
+/* ========== TAB BAR ========== */
+.tab-bar {
+    display: flex;
+    border-bottom: 1px solid var(--border-panel);
+    background: var(--bg-panel-lighter);
+    flex-shrink: 0;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 0.85rem 1.25rem;
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    letter-spacing: 0.02em;
+}
+
+.tab-btn:hover {
+    color: var(--text-secondary);
+    background: rgba(139, 92, 246, 0.04);
+}
+
+.tab-btn.active {
+    color: var(--accent-purple);
+    border-bottom-color: var(--accent-purple);
+    background: rgba(139, 92, 246, 0.06);
+}
+
+.tab-icon {
+    font-size: 1rem;
+}
+
+/* ========== TAB CONTENT (two-panel grid) ========== */
+.tab-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* ========== SERVICE BADGES ========== */
+.service-badge {
+    font-size: 0.85rem;
+    line-height: 1;
+}
+
+.service-chip-badge {
+    font-size: 0.75rem;
+    margin-right: 2px;
+}
+
+.service-icon-placeholder {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(139, 92, 246, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
 }
 
 /* ========== LEFT PANEL — Item List ========== */
@@ -636,6 +709,59 @@ body {
     animation: fadeSlideIn 0.25s ease forwards;
 }
 
+/* ========== COMBINED FOOTER ========== */
+.combined-footer {
+    border-top: 1px solid var(--border-panel);
+    background: var(--bg-panel-lighter);
+    padding: 0.85rem 1.5rem;
+    flex-shrink: 0;
+}
+
+.combined-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.combined-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+    min-width: 80px;
+}
+
+.combined-total-cell {
+    padding-left: 0.75rem;
+    border-left: 1px solid var(--border-panel);
+}
+
+.combined-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+}
+
+.combined-value {
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.combined-total-value {
+    font-size: 1.2rem;
+}
+
+.combined-plus,
+.combined-equals {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-top: 0.65rem;
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     body {
@@ -643,9 +769,12 @@ body {
     }
 
     .app {
-        grid-template-columns: 1fr;
         max-height: none;
         border-radius: 14px;
+    }
+
+    .tab-content {
+        grid-template-columns: 1fr;
     }
 
     .items-panel {

@@ -15,40 +15,72 @@
 
 <body>
     <div class="app">
-        <!-- LEFT PANEL — Component List -->
-        <div class="items-panel">
-            <div class="items-header">
-                <h2>Componentes</h2>
-                <span class="badge" id="countBadge">0</span>
-            </div>
-            <div class="items-list" id="itemsList"></div>
+        <!-- TAB BAR -->
+        <div class="tab-bar">
+            <button class="tab-btn active" data-tab="stage">
+                <span class="tab-icon">⚙️</span> Stage
+            </button>
+            <button class="tab-btn" data-tab="services">
+                <span class="tab-icon">🔧</span> Serviços
+            </button>
         </div>
 
-        <!-- RIGHT PANEL — Summary -->
-        <div class="detail-panel" id="detailPanel">
-            <div class="detail-header">
-                <div>
-                    <div class="detail-title">Craft Calculator</div>
-                    <div class="detail-subtitle">Selecione componentes para calcular</div>
+        <div class="tab-content">
+            <!-- LEFT PANEL — Item List -->
+            <div class="items-panel">
+                <div class="items-header">
+                    <h2 id="panelTitle">Componentes</h2>
+                    <span class="badge" id="countBadge">0</span>
                 </div>
-                <div class="header-controls">
-                    <div class="discount-input-group" id="discountGroup" style="display:none;">
-                        <label for="discountInput">Desconto</label>
-                        <div class="discount-field">
-                            <input type="number" id="discountInput" min="0" max="100" value="0" step="1">
-                            <span class="discount-suffix">%</span>
-                        </div>
+                <div class="items-list" id="itemsList"></div>
+            </div>
+
+            <!-- RIGHT PANEL — Summary -->
+            <div class="detail-panel" id="detailPanel">
+                <div class="detail-header">
+                    <div>
+                        <div class="detail-title" id="detailTitle">Craft Calculator</div>
+                        <div class="detail-subtitle" id="detailSubtitle">Selecione componentes para calcular</div>
                     </div>
-                    <button class="clear-btn" id="clearBtn" style="display:none;">Limpar</button>
+                    <div class="header-controls">
+                        <div class="discount-input-group" id="discountGroup" style="display:none;">
+                            <label for="discountInput">Desconto</label>
+                            <div class="discount-field">
+                                <input type="number" id="discountInput" min="0" max="100" value="0" step="1">
+                                <span class="discount-suffix">%</span>
+                            </div>
+                        </div>
+                        <button class="clear-btn" id="clearBtn" style="display:none;">Limpar</button>
+                    </div>
+                </div>
+
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">🔧</div>
+                    <p>Selecione um ou mais componentes na lista ao lado para ver os materiais necessários e o custo total.</p>
+                </div>
+
+                <div id="summaryContent" style="display:none;"></div>
+            </div>
+        </div>
+
+        <!-- COMBINED TOTAL FOOTER -->
+        <div class="combined-footer" id="combinedFooter" style="display:none;">
+            <div class="combined-row">
+                <div class="combined-cell">
+                    <span class="combined-label">⚙️ Stage</span>
+                    <span class="combined-value" id="combinedStage">$0</span>
+                </div>
+                <span class="combined-plus">+</span>
+                <div class="combined-cell">
+                    <span class="combined-label">🔧 Serviços</span>
+                    <span class="combined-value" id="combinedServices">$0</span>
+                </div>
+                <span class="combined-equals">=</span>
+                <div class="combined-cell combined-total-cell">
+                    <span class="combined-label">Lucro Total</span>
+                    <span class="combined-value combined-total-value" id="combinedTotal">$0</span>
                 </div>
             </div>
-
-            <div class="empty-state" id="emptyState">
-                <div class="empty-icon">🔧</div>
-                <p>Selecione um ou mais componentes na lista ao lado para ver os materiais necessários e o custo total.</p>
-            </div>
-
-            <div id="summaryContent" style="display:none;"></div>
         </div>
     </div>
 

@@ -169,3 +169,141 @@ const components = [
         ]
     }
 ];
+
+const services = [
+    {
+        id: "repair_ecu",
+        name: "Reparar ECU",
+        price: 750,
+        ingredients: [
+            { id: "refined_copper", quantity: 10 },
+            { id: "refined_plastic", quantity: 6 },
+            { id: "refined_scrap", quantity: 5 }
+        ]
+    },
+    {
+        id: "repair_filter",
+        name: "Reparar Filtro",
+        price: 750,
+        ingredients: [
+            { id: "refined_rubber", quantity: 10 },
+            { id: "refined_plastic", quantity: 10 },
+            { id: "refined_aluminum", quantity: 9 }
+        ]
+    },
+    {
+        id: "repair_intercooler",
+        name: "Reparar Intercooler",
+        price: 750,
+        ingredients: [
+            { id: "refined_aluminum", quantity: 15 },
+            { id: "refined_copper", quantity: 14 },
+            { id: "refined_scrap", quantity: 13 }
+        ]
+    },
+    {
+        id: "repair_coletor",
+        name: "Reparar Coletor",
+        price: 750,
+        ingredients: [
+            { id: "refined_aluminum", quantity: 15 },
+            { id: "refined_copper", quantity: 14 },
+            { id: "refined_scrap", quantity: 13 }
+        ]
+    },
+    {
+        id: "repair_bomba_combustivel",
+        name: "Reparar Bomba de Combustível",
+        price: 750,
+        ingredients: [
+            { id: "refined_aluminum", quantity: 15 },
+            { id: "refined_copper", quantity: 14 },
+            { id: "refined_scrap", quantity: 13 }
+        ]
+    },
+    {
+        id: "repair_turbo",
+        name: "Reparar Turbo",
+        price: 750,
+        ingredients: [
+            { id: "refined_scrap", quantity: 15 },
+            { id: "refined_aluminum", quantity: 14 }
+        ]
+    },
+    {
+        id: "repair_exaustor",
+        name: "Reparar Exaustor",
+        price: 750,
+        ingredients: [
+            { id: "refined_scrap", quantity: 15 },
+            { id: "refined_aluminum", quantity: 14 }
+        ]
+    },
+    {
+        id: "repair_clutch",
+        name: "Reparar Embreagem",
+        price: 750,
+        ingredients: [
+            { id: "refined_scrap", quantity: 14 },
+            { id: "refined_aluminum", quantity: 14 },
+            { id: "refined_rubber", quantity: 14 }
+        ]
+    },
+    {
+        id: "repair_brake",
+        name: "Reparar Freio",
+        price: 750,
+        ingredients: [
+            { id: "refined_rubber", quantity: 8 },
+            { id: "refined_scrap", quantity: 9 }
+        ]
+    },
+    {
+        id: "repair_suspension",
+        name: "Reparar Suspensão",
+        price: 750,
+        ingredients: [
+            { id: "refined_rubber", quantity: 8 },
+            { id: "refined_scrap", quantity: 9 }
+        ]
+    },
+    {
+        id: "repair_lataria",
+        name: "Reparar Lataria",
+        price: 200,
+        ingredients: [
+            { id: "refined_aluminum", quantity: 6 },
+            { id: "refined_scrap", quantity: 7 }
+        ]
+    },
+    {
+        id: "repair_engine",
+        name: "Reparar Motor",
+        price: 700,
+        ingredients: [
+            { id: "refined_aluminum", quantity: 7 },
+            { id: "refined_copper", quantity: 10 },
+            { id: "refined_scrap", quantity: 20 }
+        ]
+    },
+    {
+        id: "lockpick",
+        name: "Lockpick",
+        image: "assets/images/lockpick.png",
+        price: 250,
+        ingredients: [
+            { id: "refined_aluminum", quantity: 15 },
+            { id: "refined_scrap", quantity: 10 }
+        ]
+    },
+    {
+        id: "advanced_lockpick",
+        name: "Lockpick Avançado",
+        image: "assets/images/lockpick_advanced.png",
+        price: 500,
+        ingredients: [
+            { id: "refined_aluminum", quantity: 30 },
+            { id: "refined_scrap", quantity: 20 }
+        ]
+    }
+];
