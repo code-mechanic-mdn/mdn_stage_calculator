@@ -172,6 +172,12 @@ const components = [
 
 const services = [
     {
+        id: "refil_nitro",
+        name: "Refil de Nitro",
+        price: 625,
+        ingredients: []
+    },
+    {
         id: "repair_ecu",
         name: "Reparar ECU",
         price: 750,
