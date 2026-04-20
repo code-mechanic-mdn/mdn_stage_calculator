@@ -285,12 +285,15 @@ const services = [
             { id: "refined_copper", quantity: 10 },
             { id: "refined_scrap", quantity: 20 }
         ]
-    },
+    }
+];
+
+const products = [
     {
         id: "lockpick",
         name: "Lockpick",
         image: "assets/images/lockpick.png",
-        price: 250,
+        sellPrice: 250,
         ingredients: [
             { id: "refined_aluminum", quantity: 15 },
             { id: "refined_scrap", quantity: 10 }
@@ -300,10 +303,38 @@ const services = [
         id: "advanced_lockpick",
         name: "Lockpick Avançado",
         image: "assets/images/lockpick_advanced.png",
-        price: 500,
+        sellPrice: 500,
         ingredients: [
             { id: "refined_aluminum", quantity: 30 },
             { id: "refined_scrap", quantity: 20 }
         ]
-    }
+    },
+    {
+        id: "engine_repair_kit",
+        name: "Kit de Reparo de Motor",
+        image: "assets/images/engine_repair_kit.png",
+        sellPrice: 2500,
+        ingredients: []
+    },
+    {
+        id: "garrafa_nitro_grande",
+        name: "Garrafa de Nitro Grande",
+        image: "assets/images/garrafa_nitro_grande.png",
+        sellPrice: 20000,
+        ingredients: []
+    }, {
+        id: "racing_seatbelt",
+        name: "Cinto de Segurança de Corrida",
+        image: "assets/images/racing_seatbelt.png",
+        sellPrice: 2000,
+        ingredients: []
+    },
+];
+
+const partners = [
+    { name: "Amigos do Fox", discount: 5 },
+    { name: "Blacklist", discount: 10 },
+    { name: "Cassey Dinner", discount: 10 },
+    { name: "PawnShop", discount: 10 },
+    { name: "Funcionário", discount: 15 }
 ];

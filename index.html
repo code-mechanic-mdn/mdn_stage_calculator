@@ -15,27 +15,62 @@
 
 <body>
     <div class="app">
-        <!-- TAB BAR -->
-        <div class="tab-bar">
-            <button class="tab-btn active" data-tab="stage">
-                <span class="tab-icon">⚙️</span> Stage
-            </button>
-            <button class="tab-btn" data-tab="services">
-                <span class="tab-icon">🔧</span> Serviços
-            </button>
-        </div>
-
-        <div class="tab-content">
-            <!-- LEFT PANEL — Item List -->
-            <div class="items-panel">
-                <div class="items-header">
-                    <h2 id="panelTitle">Componentes</h2>
-                    <span class="badge" id="countBadge">0</span>
+        <!-- MAIN CONTENT: Left Sidebar + Center + Right Sidebar -->
+        <div class="main-content">
+            <!-- LEFT SIDEBAR — Accordion Menu -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h1 class="sidebar-title">MDN MEC</h1>
+                    <span class="sidebar-subtitle">Calculadora</span>
                 </div>
-                <div class="items-list" id="itemsList"></div>
-            </div>
 
-            <!-- RIGHT PANEL — Summary -->
+                <!-- Accordion: Serviços -->
+                <div class="accordion" data-category="services">
+                    <button class="accordion-header" id="accordionServices">
+                        <div class="accordion-header-left">
+                            <span class="accordion-icon">🔧</span>
+                            <span class="accordion-label">Serviços</span>
+                        </div>
+                        <div class="accordion-header-right">
+                            <span class="accordion-count" id="servicesCount">0</span>
+                            <span class="accordion-arrow">▾</span>
+                        </div>
+                    </button>
+                    <div class="accordion-content" id="servicesList"></div>
+                </div>
+
+                <!-- Accordion: Stage -->
+                <div class="accordion" data-category="stage">
+                    <button class="accordion-header" id="accordionStage">
+                        <div class="accordion-header-left">
+                            <span class="accordion-icon">⚙️</span>
+                            <span class="accordion-label">Stage</span>
+                        </div>
+                        <div class="accordion-header-right">
+                            <span class="accordion-count" id="stageCount">0</span>
+                            <span class="accordion-arrow">▾</span>
+                        </div>
+                    </button>
+                    <div class="accordion-content" id="stageList"></div>
+                </div>
+
+                <!-- Accordion: Produtos -->
+                <div class="accordion" data-category="products">
+                    <button class="accordion-header" id="accordionProducts">
+                        <div class="accordion-header-left">
+                            <span class="accordion-icon">📦</span>
+                            <span class="accordion-label">Produtos</span>
+                        </div>
+                        <div class="accordion-header-right">
+                            <span class="accordion-count" id="productsCount">0</span>
+                            <span class="accordion-arrow">▾</span>
+                        </div>
+                    </button>
+                    <div class="accordion-content" id="productsList"></div>
+                </div>
+            </aside>
+
+            <!-- CENTER PANEL — Summary -->
             <div class="detail-panel" id="detailPanel">
                 <div class="detail-header">
                     <div>
@@ -43,43 +78,62 @@
                         <div class="detail-subtitle" id="detailSubtitle">Selecione componentes para calcular</div>
                     </div>
                     <div class="header-controls">
-                        <div class="discount-input-group" id="discountGroup" style="display:none;">
-                            <label for="discountInput">Desconto</label>
-                            <div class="discount-field">
-                                <input type="number" id="discountInput" min="0" max="100" value="0" step="1">
-                                <span class="discount-suffix">%</span>
-                            </div>
-                        </div>
                         <button class="clear-btn" id="clearBtn" style="display:none;">Limpar</button>
                     </div>
                 </div>
 
+                <!-- Config & Options Row -->
+                <div class="options-row" id="optionsRow" style="display:none;">
+                    <!-- Parceiros Dropdown -->
+                    <div class="partner-group" id="partnerGroup">
+                        <label for="partnerSelect">Parceiro</label>
+                        <select id="partnerSelect">
+                            <option value="">Nenhum</option>
+                        </select>
+                    </div>
+
+                    <!-- Desconto -->
+                    <div class="discount-input-group" id="discountGroup">
+                        <label for="discountInput">Desconto</label>
+                        <div class="discount-field">
+                            <input type="number" id="discountInput" min="0" max="100" value="0" step="1">
+                            <span class="discount-suffix">%</span>
+                        </div>
+                    </div>
+
+                    <!-- Financial Details Toggle -->
+                    <label class="toggle-label" for="financialToggle">
+                        <input type="checkbox" id="financialToggle">
+                        <span class="toggle-switch"></span>
+                        <span class="toggle-text">Exibir detalhes financeiros</span>
+                    </label>
+                </div>
+
                 <div class="empty-state" id="emptyState">
                     <div class="empty-icon">🔧</div>
-                    <p>Selecione um ou mais componentes na lista ao lado para ver os materiais necessários e o custo total.</p>
+                    <p>Selecione um ou mais itens no menu ao lado para ver os materiais necessários e o custo total.</p>
                 </div>
 
                 <div id="summaryContent" style="display:none;"></div>
             </div>
+
+            <!-- RIGHT SIDEBAR — Selected Items -->
+            <aside class="right-sidebar" id="rightSidebar">
+                <div class="right-sidebar-header">
+                    <h2 class="right-sidebar-title">Selecionados</h2>
+                    <span class="right-sidebar-badge" id="selectedTotalCount">0</span>
+                </div>
+                <div class="right-sidebar-list" id="selectedItemsList">
+                    <div class="right-sidebar-empty">Nenhum item selecionado</div>
+                </div>
+            </aside>
         </div>
 
-        <!-- COMBINED TOTAL FOOTER -->
-        <div class="combined-footer" id="combinedFooter" style="display:none;">
-            <div class="combined-row">
-                <div class="combined-cell">
-                    <span class="combined-label">⚙️ Stage</span>
-                    <span class="combined-value" id="combinedStage">$0</span>
-                </div>
-                <span class="combined-plus">+</span>
-                <div class="combined-cell">
-                    <span class="combined-label">🔧 Serviços</span>
-                    <span class="combined-value" id="combinedServices">$0</span>
-                </div>
-                <span class="combined-equals">=</span>
-                <div class="combined-cell combined-total-cell">
-                    <span class="combined-label">Lucro Total</span>
-                    <span class="combined-value combined-total-value" id="combinedTotal">$0</span>
-                </div>
+        <!-- STICKY TOTAL BAR (always visible) -->
+        <div class="total-sticky-bar" id="totalStickyBar">
+            <div class="sticky-total-inner">
+                <span class="sticky-total-label">Valor Total da Venda</span>
+                <span class="sticky-total-value" id="stickyTotalValue">$0</span>
             </div>
         </div>
     </div>
