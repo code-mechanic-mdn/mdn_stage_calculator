@@ -172,6 +172,25 @@ const components = [
 
 const services = [
     {
+        id: "repair_lataria",
+        name: "Reparar Lataria",
+        price: 200,
+        ingredients: [
+            { id: "refined_aluminum", quantity: 6 },
+            { id: "refined_scrap", quantity: 7 }
+        ]
+    },
+    {
+        id: "repair_engine",
+        name: "Reparar Motor",
+        price: 700,
+        ingredients: [
+            { id: "refined_aluminum", quantity: 7 },
+            { id: "refined_copper", quantity: 10 },
+            { id: "refined_scrap", quantity: 20 }
+        ]
+    },
+    {
         id: "refil_nitro",
         name: "Refil de Nitro",
         price: 625,
@@ -271,25 +290,6 @@ const services = [
         ingredients: [
             { id: "refined_rubber", quantity: 8 },
             { id: "refined_scrap", quantity: 9 }
-        ]
-    },
-    {
-        id: "repair_lataria",
-        name: "Reparar Lataria",
-        price: 200,
-        ingredients: [
-            { id: "refined_aluminum", quantity: 6 },
-            { id: "refined_scrap", quantity: 7 }
-        ]
-    },
-    {
-        id: "repair_engine",
-        name: "Reparar Motor",
-        price: 700,
-        ingredients: [
-            { id: "refined_aluminum", quantity: 7 },
-            { id: "refined_copper", quantity: 10 },
-            { id: "refined_scrap", quantity: 20 }
         ]
     }
 ];
