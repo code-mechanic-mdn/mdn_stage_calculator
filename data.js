@@ -342,5 +342,6 @@ const partners = [
     { name: "Blacklist", discount: 10 },
     { name: "Cassey Dinner", discount: 10 },
     { name: "PawnShop", discount: 10 },
+    { name: "YellowJack", discount: 10 },
     { name: "Funcionário", discount: 15 }
 ];
