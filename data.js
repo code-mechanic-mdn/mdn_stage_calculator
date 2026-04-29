@@ -332,7 +332,7 @@ const products = [
         id: "racing_seatbelt",
         name: "Cinto de Segurança de Corrida",
         image: "assets/images/racing_seatbelt.png",
-        sellPrice: 2000,
+        sellPrice: 3000,
         ingredients: []
     },
 ];
