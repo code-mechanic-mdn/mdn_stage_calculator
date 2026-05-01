@@ -172,6 +172,12 @@ const components = [
 
 const services = [
     {
+        id: "remove_install_part",
+        name: "Remover/Instalar Peça",
+        price: 150,
+        ingredients: []
+    },
+    {
         id: "repair_lataria",
         name: "Reparar Lataria",
         price: 200,
