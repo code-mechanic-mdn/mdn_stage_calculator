@@ -3,7 +3,8 @@ const PRODUCT = {
     ADVANCED_LOCKPICK: "advanced_lockpick",
     ENGINE_REPAIR_KIT: "engine_repair_kit",
     GARRAFA_NITRO_GRANDE: "garrafa_nitro_grande",
-    RACING_SEATBELT: "racing_seatbelt"
+    RACING_SEATBELT: "racing_seatbelt",
+    TIRE: "tire
 };
 
 const products = [
@@ -46,5 +47,11 @@ const products = [
         image: "assets/images/racing_seatbelt.png",
         sellPrice: 3000,
         ingredients: []
-    },
+    },{
+        id: PRODUCT.TIRE,
+        name: "Pneu",
+        sellPrice: 150,
+        ingredients: [
+        ]
+    }
 ];
